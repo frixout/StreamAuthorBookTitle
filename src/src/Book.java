@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
-public class Book {
+public class Book implements Comparable<Book>{
     private String name;
     private List<Title> titleList = new ArrayList<>();
 
@@ -24,5 +25,10 @@ public class Book {
 
     public void setTitleList(List<Title> titleList) {
         this.titleList = titleList;
+    }
+
+    @Override
+    public int compareTo(Book o) {
+        return this.name.compareTo(o.getName());
     }
 }
