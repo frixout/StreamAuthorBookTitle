@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Book implements Comparable<Book>{
     private String name;
@@ -30,5 +28,22 @@ public class Book implements Comparable<Book>{
     @Override
     public int compareTo(Book o) {
         return this.name.compareTo(o.getName());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this){
+            return true;
+        }
+        if (obj == null || obj.getClass() !=this.getClass()){
+            return false;
+        }
+        Book book = (Book) obj;
+        return name.equals(book.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }
