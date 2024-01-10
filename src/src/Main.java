@@ -19,7 +19,6 @@ public class Main {
                         .sorted(Comparator.comparing(Book::getName))
                         .distinct()
                         .flatMap(x -> x.getTitleList().stream())
-                        .peek(x -> out.println(x.getName()))
                         .count()
         );
         out.println(Stream.of(author1, author2, author3)
@@ -28,7 +27,6 @@ public class Main {
                         .filter(x -> x.getName().length() < 20 && x.getName().startsWith("В"))
                         .distinct()
                         .flatMap(x -> x.getTitleList().stream())
-                        .peek(x -> out.println(x.getName()))
                         .count()
         );
         out.println(Stream.of(author1, author2, author3)
@@ -37,7 +35,6 @@ public class Main {
                         .sorted(Comparator.comparing(Book::getName))
                         .distinct()
                         .flatMap(x -> x.getTitleList().stream())
-                        .peek(x -> out.println(x.getName()))
                         .mapToInt(x -> x.getName().length())
                         .average()
         );
@@ -47,7 +44,6 @@ public class Main {
                         .filter(x -> x.getName().length() < 20 && x.getName().startsWith("В"))
                         .distinct()
                         .flatMap(x -> x.getTitleList().stream())
-                        .peek(x -> out.println(x.getName()))
                         .mapToInt(x -> x.getName().length())
                         .average()
         );
