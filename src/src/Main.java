@@ -83,9 +83,7 @@ public class Main {
         Iterator<Book> bookIterator = bookList1.iterator();
         while (bookIterator.hasNext()){
             Book book = bookIterator.next();
-            if(book.getName().length()>12){
-                bookIterator.remove();
-            } else if ((book.getName().charAt(0)) != 'В') {
+            if(book.getName().length()>12 || book.getName().charAt(0) != 'B'){
                 bookIterator.remove();
             }
         }
