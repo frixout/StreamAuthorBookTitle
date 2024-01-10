@@ -71,6 +71,7 @@ public class Main {
             len = title.getName().length() + len;
         }
         out.println(len/titleList.size());
+
         /*Stream.of(author, author2, author3)
                 .sorted(Comparator.comparing(Author::getName))
                 .forEach(x -> out.println(x.getName()))
